@@ -3,683 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.D Grows | Web Design & Resume Services</title>
+    <title>M.D Grows | 1-Page Stores in 24 Hours</title>
     <style>
         :root {
-            --primary-color: #000;
-            --secondary-color: #333;
-            --accent-color: #0071e3;
-            --light-color: #f5f5f7;
-            --text-color: #1d1d1f;
-            --text-light: #86868b;
+            --primary: #000000;
+            --accent: #7E22CE;
+            --light: #FAFAFA;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        
         body {
-            background-color: white;
-            color: var(--text-color);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            color: var(--primary);
+            background: white;
         }
-        
         /* Navigation */
         nav {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
             position: fixed;
             width: 100%;
-            z-index: 1000;
-            padding: 0 22px;
+            z-index: 100;
         }
-        
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 44px;
         }
-        
         .nav-logo {
-            color: var(--light-color);
-            font-weight: 500;
-            font-size: 21px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
             text-decoration: none;
         }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 24px;
-        }
-        
-        .nav-links a {
-            color: var(--light-color);
-            text-decoration: none;
-            font-size: 12px;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .nav-links a:hover {
-            opacity: 1;
-        }
-        
         /* Hero Section */
         .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background-size: cover;
+            color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
-            padding-top: 44px;
+            padding: 0 20px;
         }
-        
         .hero h1 {
-            font-size: 56px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
-        
-        .hero h2 {
-            font-size: 28px;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-        
         .hero p {
-            font-size: 21px;
+            font-size: 1.2rem;
             max-width: 600px;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
-        
         .cta-button {
-            background-color: var(--accent-color);
+            background: var(--accent);
             color: white;
-            border: none;
-            padding: 12px 22px;
+            padding: 12px 30px;
             border-radius: 30px;
-            font-size: 17px;
-            cursor: pointer;
-            transition: background-color 0.3s;
             text-decoration: none;
-            display: inline-block;
-        }
-        
-        .cta-button:hover {
-            background-color: #0077ed;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .section-title {
-            font-size: 40px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        .section-subtitle {
-            font-size: 21px;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 60px;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .feature-card {
-            background-color: var(--light-color);
-            border-radius: 18px;
-            padding: 30px;
-            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
             transition: transform 0.3s;
         }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
+        .cta-button:hover {
+            transform: translateY(-3px);
         }
-        
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-        
-        .feature-title {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .feature-desc {
-            color: var(--text-light);
-            font-size: 17px;
-        }
-        
-        /* Portfolio Section */
-        .portfolio {
-            padding: 80px 20px;
-            background-color: var(--light-color);
-            text-align: center;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 60px auto 0;
-        }
-        
-        .portfolio-item {
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        .portfolio-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            color: white;
-            padding: 20px;
-            text-align: left;
-        }
-        
-        .portfolio-caption h3 {
-            font-size: 21px;
-            margin-bottom: 5px;
-        }
-        
-        .portfolio-caption p {
-            font-size: 14px;
-            opacity: 0.8;
-        }
-        
-        /* Testimonials Section */
+        /* Testimonials */
         .testimonials {
             padding: 80px 20px;
-            background-color: #fafafa;
+            background: var(--light);
             text-align: center;
             overflow: hidden;
-            position: relative;
         }
-        
         .testimonial-track {
             display: flex;
             gap: 30px;
             animation: scroll 20s linear infinite;
-            width: calc(300px * 6);
+            width: calc(250px * 8);
         }
-        
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-300px * 3)); }
+            100% { transform: translateX(calc(-250px * 4)); }
         }
-        
         .testimonial-card {
             background: white;
-            border-radius: 12px;
-            padding: 30px;
+            border-radius: 10px;
+            padding: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: left;
-            min-width: 300px;
-            flex-shrink: 0;
+            min-width: 250px;
         }
-        
         .stars {
-            color: #FFD700;
-            font-size: 24px;
-            margin-bottom: 15px;
+            color: gold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
-        
-        .testimonial-text {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        
-        .client-info {
-            font-size: 14px;
-        }
-        
-        .client-info strong {
-            color: #333;
-            display: block;
-        }
-        
-        .client-info span {
-            color: #777;
-        }
-        
-        /* Pricing Section */
+        /* Pricing */
         .pricing {
             padding: 80px 20px;
             text-align: center;
         }
-        
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 1200px;
-            margin: 60px auto 0;
+            max-width: 1000px;
+            margin: 40px auto;
         }
-        
         .pricing-card {
-            border-radius: 18px;
-            padding: 40px 30px;
-            background-color: var(--light-color);
+            background: var(--light);
+            border-radius: 10px;
+            padding: 30px;
             transition: transform 0.3s;
         }
-        
         .pricing-card:hover {
             transform: translateY(-10px);
         }
-        
-        .pricing-card.popular {
-            border: 2px solid var(--accent-color);
-            position: relative;
-        }
-        
-        .popular-tag {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--accent-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-        
-        .pricing-title {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .pricing-price {
-            font-size: 48px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .pricing-features li {
-            margin-bottom: 10px;
-            color: var(--text-light);
-        }
-        
-        /* Contact Section */
+        /* Contact */
         .contact {
             padding: 80px 20px;
-            background-color: var(--light-color);
+            background: var(--light);
             text-align: center;
         }
-        
         .contact-form {
-            max-width: 600px;
-            margin: 40px auto 0;
+            max-width: 500px;
+            margin: 0 auto;
         }
-        
         .form-group {
             margin-bottom: 20px;
             text-align: left;
         }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 17px;
-        }
-        
-        .form-group input,
+        .form-group input, 
         .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 17px;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .footer-links li {
-            margin: 0 15px;
-        }
-        
-        .footer-links a {
-            color: var(--light-color);
-            text-decoration: none;
-            font-size: 12px;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-        }
-        
-        .social-links {
-            margin-bottom: 30px;
-        }
-        
-        .social-links a {
-            color: var(--light-color);
-            margin: 0 10px;
-            font-size: 21px;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-        
-        .social-links a:hover {
-            opacity: 1;
-        }
-        
-        .copyright {
-            font-size: 12px;
-            color: var(--text-light);
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 40px;
-            }
-            
-            .hero h2 {
-                font-size: 24px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-                padding: 0 20px;
-            }
-            
-            .section-title {
-                font-size: 32px;
-            }
-            
-            .section-subtitle {
-                font-size: 18px;
-                padding: 0 20px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .testimonial-track {
-                animation: scroll 30s linear infinite;
-            }
+            border-radius: 5px;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#" class="nav-logo">M.D Grows</a>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Beautiful Websites. Stunning Resumes.</h1>
-        <h2>Delivered in 48 Hours or Less</h2>
-        <p>We help businesses and professionals establish their online presence with custom websites and resumes that get results.</p>
-        <a href="#contact" class="cta-button">Get Started Today</a>
+        <h1>1-Page Online Stores in 24 Hours</h1>
+        <p>Get a professional storefront for your small business - no coding needed. Perfect for Instagram sellers, artists, and local businesses.</p>
+        <a href="#contact" class="cta-button">Get Yours Now</a>
     </section>
-    
-    <!-- Features/Services Section -->
-    <section class="features" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">We specialize in creating high-quality digital assets that help you stand out from the competition.</p>
-        
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3 class="feature-title">Website Design</h3>
-                <p class="feature-desc">Custom, responsive websites designed to convert visitors into customers.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
-                <h3 class="feature-title">Resume Design</h3>
-                <p class="feature-desc">Professional resumes that highlight your skills and get you noticed.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <h3 class="feature-title">Fast Turnaround</h3>
-                <p class="feature-desc">Get your website or resume delivered within 48 hours of approval.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <h2 class="section-title">Our Work</h2>
-        <p class="section-subtitle">Browse through some of our recent projects to see the quality we deliver.</p>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Resume Example 1">
-                <div class="portfolio-caption">
-                    <h3>Modern Resume Design</h3>
-                    <p>Clean, professional layout with emphasis on skills</p>
-                </div>
-            </div>
-            
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Resume Example 2">
-                <div class="portfolio-caption">
-                    <h3>Creative Resume Layout</h3>
-                    <p>Unique design that stands out from traditional formats</p>
-                </div>
-            </div>
-            
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Website Example">
-                <div class="portfolio-caption">
-                    <h3>Business Website</h3>
-                    <p>Responsive design with clear call-to-action</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials Section -->
+
+    <!-- Testimonials -->
     <section class="testimonials" id="testimonials">
-        <h2 class="section-title">What Our Clients Say</h2>
-        <p class="section-subtitle">Don't just take our word for it—here's what people are saying.</p>
+        <h2>What Our Clients Say</h2>
+        <p>Don't just take our word for it</p>
         
         <div class="testimonial-track">
             <!-- Duplicate testimonials for seamless looping -->
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"M.D Grows designed my resume, and I got 3 interview calls in a week! The design was clean and professional. Highly recommend!"</p>
-                <div class="client-info">
-                    <strong>— Sarah K.</strong>
-                    <span>Marketing Professional</span>
-                </div>
+                <p>"Got my cookie business online in 1 day! Sales doubled immediately."</p>
+                <p><strong>- Jamie R.</strong></p>
             </div>
-            
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Our business website was done in just 48 hours, and it looks amazing! Fast, affordable, and great communication."</p>
-                <div class="client-info">
-                    <strong>— James L.</strong>
-                    <span>Small Business Owner</span>
-                </div>
+                <p>"Finally look professional without paying Shopify prices. 10/10!"</p>
+                <p><strong>- Marcus T.</strong></p>
             </div>
-            
             <div class="testimonial-card">
                 <div class="stars">★★★★☆</div>
-                <p class="testimonial-text">"Solid work! My resume stood out, and I landed a job at a tech startup. Would've given 5 stars if the first draft came a bit quicker."</p>
-                <div class="client-info">
-                    <strong>— Alex M.</strong>
-                    <span>Software Developer</span>
-                </div>
+                <p>"Super fast delivery. Only wish I found this sooner!"</p>
+                <p><strong>- Sarah K.</strong></p>
             </div>
-            
-            <!-- Duplicates for seamless scrolling -->
+            <!-- Duplicates -->
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"M.D Grows designed my resume, and I got 3 interview calls in a week! The design was clean and professional. Highly recommend!"</p>
-                <div class="client-info">
-                    <strong>— Sarah K.</strong>
-                    <span>Marketing Professional</span>
-                </div>
+                <p>"Got my cookie business online in 1 day! Sales doubled immediately."</p>
+                <p><strong>- Jamie R.</strong></p>
             </div>
-            
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Our business website was done in just 48 hours, and it looks amazing! Fast, affordable, and great communication."</p>
-                <div class="client-info">
-                    <strong>— James L.</strong>
-                    <span>Small Business Owner</span>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">★★★★☆</div>
-                <p class="testimonial-text">"Solid work! My resume stood out, and I landed a job at a tech startup. Would've given 5 stars if the first draft came a bit quicker."</p>
-                <div class="client-info">
-                    <strong>— Alex M.</strong>
-                    <span>Software Developer</span>
-                </div>
+                <p>"Finally look professional without paying Shopify prices. 10/10!"</p>
+                <p><strong>- Marcus T.</strong></p>
             </div>
         </div>
     </section>
-    
-    <!-- Pricing Section -->
+
+    <!-- Pricing -->
     <section class="pricing" id="pricing">
-        <h2 class="section-title">Simple, Affordable Pricing</h2>
-        <p class="section-subtitle">Choose the package that fits your needs and budget.</p>
+        <h2>Simple Pricing</h2>
+        <p>Choose what works for you</p>
         
         <div class="pricing-grid">
             <div class="pricing-card">
-                <h3 class="pricing-title">Basic Resume</h3>
-                <div class="pricing-price">$99</div>
-                <ul class="pricing-features">
-                    <li>1-Page Professional Resume</li>
-                    <li>Custom Design</li>
-                    <li>2 Revisions</li>
-                    <li>48-Hour Delivery</li>
-                    <li>PDF Format</li>
+                <h3>Basic Store</h3>
+                <h4>$99 <span>one-time</span></h4>
+                <ul>
+                    <li>1-page mobile-friendly store</li>
+                    <li>PayPal/Stripe integration</li>
+                    <li>3 product slots</li>
+                    <li>24-hour delivery</li>
                 </ul>
-                <a href="#contact" class="cta-button">Order Now</a>
+                <a href="#contact" class="cta-button">Get Started</a>
             </div>
-            
-            <div class="pricing-card popular">
-                <div class="popular-tag">Most Popular</div>
-                <h3 class="pricing-title">Premium Resume</h3>
-                <div class="pricing-price">$199</div>
-                <ul class="pricing-features">
-                    <li>2-Page Resume + Cover Letter</li>
-                    <li>Custom Design</li>
-                    <li>Unlimited Revisions</li>
-                    <li>24-Hour Delivery</li>
-                    <li>PDF + Word Format</li>
-                    <li>LinkedIn Optimization</li>
+            <div class="pricing-card" style="border: 2px solid var(--accent);">
+                <h3>Premium Store</h3>
+                <h4>$199 <span>one-time</span></h4>
+                <ul>
+                    <li>Everything in Basic</li>
+                    <li>5 product slots</li>
+                    <li>Instagram link setup</li>
+                    <li>Basic SEO</li>
                 </ul>
-                <a href="#contact" class="cta-button">Order Now</a>
+                <a href="#contact" class="cta-button">Get Started</a>
             </div>
-            
             <div class="pricing-card">
-                <h3 class="pricing-title">Business Website</h3>
-                <div class="pricing-price">$499</div>
-                <ul class="pricing-features">
-                    <li>5-Page Custom Website</li>
-                    <li>Mobile Responsive</li>
-                    <li>Basic SEO Setup</li>
-                    <li>Contact Form</li>
-                    <li>48-Hour Delivery</li>
-                    <li>1 Year Hosting Included</li>
+                <h3>Store + Social</h3>
+                <h4>$299 <span>one-time</span></h4>
+                <ul>
+                    <li>Everything in Premium</li>
+                    <li>3 social media designs</li>
+                    <li>Hashtag strategy</li>
                 </ul>
-                <a href="#contact" class="cta-button">Order Now</a>
+                <a href="#contact" class="cta-button">Get Started</a>
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
+
+    <!-- Contact -->
     <section class="contact" id="contact">
-        <h2 class="section-title">Let's Work Together</h2>
-        <p class="section-subtitle">Ready to get started? Send us a message and we'll respond within 24 hours.</p>
+        <h2>Get Your Store Today</h2>
+        <p>Fill out this form and we'll get started immediately</p>
         
         <div class="contact-form">
             <form action="mailto:m.d_grows@yahoo.com" method="post" enctype="text/plain">
@@ -687,51 +255,32 @@
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+                    <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="service">Service Needed</label>
-                    <select id="service" name="service" class="form-control" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 17px;">
-                        <option value="basic-resume">Basic Resume ($99)</option>
-                        <option value="premium-resume">Premium Resume ($199)</option>
-                        <option value="business-website">Business Website ($499)</option>
-                        <option value="other">Other</option>
+                    <label for="service">Package</label>
+                    <select id="service" name="service">
+                        <option value="Basic Store - $99">Basic Store ($99)</option>
+                        <option value="Premium Store - $199">Premium Store ($199)</option>
+                        <option value="Store + Social - $299">Store + Social ($299)</option>
                     </select>
                 </div>
-                
                 <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Tell us about your business</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
                 </div>
-                
-                <button type="submit" class="cta-button">Send Message</button>
+                <button type="submit" class="cta-button">Send Request</button>
             </form>
         </div>
     </section>
-    
-    <!-- Footer -->
+
     <footer>
-        <div class="footer-logo">M.D Grows</div>
-        
-        <ul class="footer-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        
+        <p>© 2023 M.D Grows | All Rights Reserved</p>
         <div class="social-links">
             <a href="https://instagram.com/m.d_grows" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:m.d_grows@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        
-        <div class="copyright">
-            &copy; 2023 M.D Grows. All rights reserved.
+            <a href="mailto:m.d_grows@yahoo.com"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
 </body>
