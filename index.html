@@ -1,302 +1,374 @@
-/* Reset & base */
-* {
-  box-sizing: border-box;
-  margin: 0; padding: 0;
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  scroll-behavior: smooth;
-}
-body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #e0e6f0;
-  line-height: 1.6;
-  padding: 20px 0 60px;
-  overflow-x: hidden;
-  scroll-padding-top: 70px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MDGrows - Premium Dropservicing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap');
 
-/* Navbar */
-#navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(12, 23, 40, 0.9);
-  padding: 14px 0;
-  z-index: 1000;
-  backdrop-filter: saturate(180%) blur(14px);
-  box-shadow: 0 8px 30px rgba(12, 23, 40, 0.3);
-}
-#navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 0;
-  padding: 0 20px;
-}
-#navbar a {
-  color: #a8c0ff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  cursor: pointer;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-#navbar a:hover,
-#navbar a.active {
-  color: #61dafb;
-  text-shadow: 0 0 8px #61dafb;
-}
+  /* Reset */
+  * {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: linear-gradient(135deg, #0a1f44, #1e376a);
+    font-family: 'Inter', sans-serif;
+    color: #e1e6f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 15px 60px;
+  }
+  /* Container Box */
+  .container {
+    max-width: 960px;
+    background: rgba(20, 35, 70, 0.85);
+    padding: 40px 45px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(50, 90, 180, 0.7);
+    backdrop-filter: saturate(180%) blur(15px);
+  }
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 55px;
+  }
+  header h1 {
+    font-weight: 900;
+    font-size: 3.8rem;
+    color: #7ab8ff;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 12px #5f9dfdcc;
+    margin-bottom: 12px;
+  }
+  header p {
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #c4d0ffcc;
+    max-width: 670px;
+    margin: 0 auto;
+    letter-spacing: 0.03em;
+  }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 100px 20px 50px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-header h1 {
-  font-weight: 900;
-  font-size: 3.75rem;
-  margin-bottom: 15px;
-  color: #a8c0ff;
-  letter-spacing: -0.04em;
-  text-shadow: 0 3px 12px rgba(97, 218, 251, 0.7);
-  line-height: 1.1;
-}
-header p {
-  font-size: 1.35rem;
-  color: #c8d6ff;
-  font-weight: 400;
-  max-width: 600px;
-  margin: 0 auto;
-  letter-spacing: 0.03em;
-}
+  /* Nav */
+  nav {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  nav a {
+    color: #8bb9ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin: 0 18px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: background 0.25s ease, color 0.25s ease;
+    cursor: pointer;
+  }
+  nav a:hover {
+    background: #5e9cffbb;
+    color: #fff;
+    box-shadow: 0 0 15px #5e9cffaa;
+  }
 
-/* Sections common */
-section {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-h2 {
-  font-weight: 800;
-  font-size: 2.5rem;
-  margin-bottom: 28px;
-  color: #a8c0ff;
-  border-bottom: 3px solid #61dafb;
-  padding-bottom: 10px;
-  max-width: max-content;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
+  /* Sections */
+  section {
+    margin-bottom: 70px;
+  }
+  h2 {
+    color: #7ab8ff;
+    font-weight: 900;
+    font-size: 2.5rem;
+    border-bottom: 3px solid #5e9cff;
+    padding-bottom: 12px;
+    max-width: max-content;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
+  }
 
-/* About */
-#about p {
-  font-size: 1.15rem;
-  color: #dbe3ff;
-  max-width: 720px;
-  margin: 0 auto;
-  font-weight: 400;
-  line-height: 1.65;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
+  /* About */
+  #about p {
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: #cbd5ffcc;
+    max-width: 720px;
+  }
 
-/* Services */
-#services ul {
-  list-style: none;
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.15rem;
-  color: #dbe3ff;
-}
-#services li {
-  margin-bottom: 14px;
-  padding-left: 1.3em;
-  text-indent: -1.3em;
-}
-#services li::before {
-  content: "▹";
-  color: #61dafb;
-  margin-right: 12px;
-  font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1;
-}
+  /* Services */
+  #services ul {
+    list-style: none;
+    max-width: 720px;
+    color: #b9c9ffcc;
+  }
+  #services li {
+    margin-bottom: 15px;
+    font-size: 1.18rem;
+    padding-left: 1.4em;
+    text-indent: -1.4em;
+    cursor: default;
+    position: relative;
+  }
+  #services li::before {
+    content: "→";
+    color: #7ab8ff;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
-/* Pricing */
-#pricing {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  flex-wrap: wrap;
-  max-width: 900px;
-  margin: 0 auto 100px;
-}
-.price-box {
-  background: rgba(26, 38, 63, 0.8);
-  color: #a8c0ff;
-  flex: 1 1 260px;
-  padding: 40px 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(41, 57, 90, 0.6);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: default;
-  backdrop-filter: saturate(200%) blur(20px);
-  border: 1px solid rgba(97, 218, 251, 0.25);
-}
-.price-box:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(97, 218, 251, 0.8);
-  color: #61dafb;
-  border-color: #61dafb;
-}
-.price-box h3 {
-  font-weight: 900;
-  font-size: 2.25rem;
-  margin-bottom: 18px;
-  letter-spacing: -0.03em;
-  text-shadow: 0 2px 8px rgba(97, 218, 251, 0.7);
-}
-.price-box p.price {
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 12px;
-  font-family: 'SF Pro Display', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-shadow: 0 4px 10px rgba(97, 218, 251, 0.8);
-}
-.price-box p.desc {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: #acc7ff;
-  line-height: 1.4;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
-}
+  /* Pricing */
+  #pricing {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .price-box {
+    background: rgba(40, 60, 100, 0.9);
+    border-radius: 18px;
+    padding: 38px 30px;
+    width: 280px;
+    box-shadow: 0 15px 35px rgba(50, 90, 180, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: default;
+    border: 1px solid transparent;
+  }
+  .price-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 28px 50px rgba(90, 140, 255, 0.9);
+    border-color: #5e9cff;
+    color: #b9d1ff;
+  }
+  .price-box h3 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 18px;
+    color: #7ab8ff;
+  }
+  .price-box p.price {
+    font-size: 3.1rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #a1c3ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 4px 8px #4e90ffcc;
+  }
+  .price-box p.desc {
+    font-size: 1.1rem;
+    color: #aabaffcc;
+  }
 
-/* Testimonials Section */
-#testimonials-section {
-  position: relative;
-  max-width: 1000px;
-  height: 320px;
-  margin: 0 auto 100px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border-top: 1px solid rgba(168,192,255,0.2);
-  border-bottom: 1px solid rgba(168,192,255,0.2);
-}
-#sticky-image {
-  position: sticky;
-  left: 0;
-  flex: 0 0 350px;
-  height: 320px;
-  background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=350&q=80') no-repeat center center/cover;
-  border-radius: 15px;
-  box-shadow: 0 18px 40px rgba(97, 218, 251, 0.3);
-  margin-right: 35px;
-  z-index: 10;
-  filter: drop-shadow(0 6px 12px rgba(97, 218, 251, 0.25));
-}
-#testimonials-scroll {
-  flex: 1;
-  height: 320px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-#testimonials-scroll::-webkit-scrollbar {
-  display: none;
-}
-#testimonials {
-  display: flex;
-  height: 100%;
-  gap: 45px;
-  align-items: center;
-  padding-bottom: 20px;
-  user-select: none;
-}
-.testimonial {
-  min-width: 340px;
-  background: rgba(26, 38, 63, 0.7);
-  padding: 32px 30px;
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(41, 57, 90, 0.5);
-  font-style: italic;
-  color: #c1d6ff;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-.testimonial:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 22px 40px rgba(97, 218, 251, 0.75);
-}
-.testimonial::before {
-  content: "“";
-  font-size: 4.5rem;
-  color: #61dafb;
-  position: absolute;
-  top: 8px;
-  left: 18px;
-  font-weight: 700;
-  font-family: serif;
-  opacity: 0.25;
-}
-.testimonial-footer {
-  margin-top: 22px;
-  font-weight: 700;
-  font-style: normal;
-  text-align: right;
-  color: #61dafb;
-  letter-spacing: 0.03em;
-  user-select: text;
-}
-
-/* Contact Section */
-#contact {
-  text-align: center;
-  font-size: 1.15rem;
-  color: #61dafb;
-  margin-bottom: 60px;
-  letter-spacing: 0.05em;
-}
-#contact a {
-  color: #61dafb;
-  text-decoration: none;
-  font-weight: 700;
-  margin: 0 20px;
-  transition: color 0.3s ease;
-  user-select: text;
-}
-#contact a:hover {
-  color: #1a9cff;
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
+  /* Testimonials Section */
+  #testimonials-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+  }
   #sticky-image {
-    display: none;
+    flex: 0 0 350px;
+    height: 320px;
+    border-radius: 20px;
+    background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=350&q=80') no-repeat center/cover;
+    box-shadow: 0 14px 38px rgba(90, 140, 255, 0.45);
+    position: sticky;
+    top: 140px;
+    user-select: none;
   }
   #testimonials-scroll {
-    flex: 1 1 100%;
+    flex: 1;
+    overflow-x: auto;
+    display: flex;
+    gap: 35px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
-  #testimonials-section {
-    height: auto;
-    padding-bottom: 30px;
+  #testimonials-scroll::-webkit-scrollbar {
+    display: none;
   }
   .testimonial {
-    min-width: 80vw;
-    margin-right: 15px;
+    min-width: 320px;
+    background: rgba(20, 35, 70, 0.75);
+    padding: 30px 28px;
+    border-radius: 20px;
+    box-shadow: 0 14px 30px rgba(50, 90, 180, 0.6);
+    font-style: italic;
+    color: #d3dbffcc;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
   }
-  #navbar ul {
-    flex-wrap: wrap;
-    gap: 20px;
+  .testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 40px rgba(90, 140, 255, 0.8);
   }
-}
+  .testimonial::before {
+    content: "“";
+    font-size: 4.5rem;
+    color: #5e9cffaa;
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-weight: 700;
+    font-family: serif;
+  }
+  .testimonial-footer {
+    margin-top: 22px;
+    font-weight: 700;
+    font-style: normal;
+    text-align: right;
+    color: #7ab8ff;
+    letter-spacing: 0.04em;
+    user-select: text;
+  }
+
+  /* Contact Section */
+  #contact {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7ab8ff;
+    letter-spacing: 0.06em;
+  }
+  #contact a {
+    color: #5e9cff;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: color 0.3s ease;
+    user-select: text;
+  }
+  #contact a:hover {
+    color: #a2c6ff;
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 950px) {
+    #testimonials-section {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px;
+    }
+    #sticky-image {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      top: 0;
+      border-radius: 16px;
+      box-shadow: 0 10px 26px rgba(90, 140, 255, 0.4);
+    }
+    #testimonials-scroll {
+      width: 100%;
+      overflow-x: auto;
+    }
+    .testimonial {
+      min-width: 260px;
+    }
+  }
+  @media (max-width: 480px) {
+    nav a {
+      margin: 0 10px;
+      font-size: 0.9rem;
+    }
+    header h1 {
+      font-size: 2.8rem;
+    }
+    #pricing {
+      gap: 18px;
+    }
+    .price-box {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>MDGrows</h1>
+      <p>Boost your business with professional dropservicing — clean, efficient, and designed to convert.</p>
+    </header>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials-section">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>At MDGrows, we’re passionate about empowering entrepreneurs and creators to unlock their business potential with streamlined dropservicing solutions. We believe in delivering top-tier quality and dedication, ensuring every client’s vision grows into reality.</p>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <ul>
+        <li>Custom Website Development</li>
+        <li>Social Media Marketing & Growth</li>
+        <li>Content Creation & Video Editing</li>
+        <li>Lead Generation & Email Marketing</li>
+      </ul>
+    </section>
+
+    <section id="pricing">
+      <div class="price-box">
+        <h3>Basic</h3>
+        <p class="price">$250</p>
+        <p class="desc">Perfect for startups needing a sleek website + basic marketing setup.</p>
+      </div>
+      <div class="price-box">
+        <h3>Standard</h3>
+        <p class="price">$600</p>
+        <p class="desc">Includes website, social media growth, and content creation.</p>
+      </div>
+      <div class="price-box">
+        <h3>Premium</h3>
+        <p class="price">$1200</p>
+        <p class="desc">Full service with lead generation, email marketing, and ongoing support.</p>
+      </div>
+    </section>
+
+    <section id="testimonials-section">
+      <div id="sticky-image"></div>
+      <div id="testimonials-scroll">
+        <div class="testimonial">
+          "MDGrows transformed my online presence overnight. The results speak for themselves!"
+          <div class="testimonial-footer">- Jamie L.</div>
+        </div>
+        <div class="testimonial">
+          "Their professionalism and dedication are unmatched. Highly recommended!"
+          <div class="testimonial-footer">- Sarah T.</div>
+        </div>
+        <div class="testimonial">
+          "A game-changer for my business growth. The team's expertise shines through."
+          <div class="testimonial-footer">- Michael R.</div>
+        </div>
+        <div class="testimonial">
+          "Fast, reliable, and effective dropservicing solutions that actually deliver."
+          <div class="testimonial-footer">- Priya S.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p>Connect with us on <a href="https://instagram.com/m.d_grows" target="_blank" rel="noopener noreferrer">@m.d_grows</a></p>
+      <p>Email: <a href="mailto:m.d_grows@yahoo.com">m.d_grows@yahoo.com</a></p>
+    </section>
+
+  </div>
+</body>
+</html>
