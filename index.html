@@ -1,287 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.D Grows | 1-Page Stores in 24 Hours</title>
-    <style>
-        :root {
-            --primary: #000000;
-            --accent: #7E22CE;
-            --light: #FAFAFA;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            color: var(--primary);
-            background: white;
-        }
-        /* Navigation */
-        nav {
-            background: rgba(0,0,0,0.9);
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-logo {
-            color: white;
-            font-weight: bold;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            height: 100vh;
-            background-size: cover;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-        .cta-button {
-            background: var(--accent);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 20px;
-            background: var(--light);
-            text-align: center;
-            overflow: hidden;
-        }
-        .testimonial-track {
-            display: flex;
-            gap: 30px;
-            animation: scroll 20s linear infinite;
-            width: calc(250px * 8);
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 4)); }
-        }
-        .testimonial-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            min-width: 250px;
-        }
-        .stars {
-            color: gold;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        /* Pricing */
-        .pricing {
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 40px auto;
-        }
-        .pricing-card {
-            background: var(--light);
-            border-radius: 10px;
-            padding: 30px;
-            transition: transform 0.3s;
-        }
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-        /* Contact */
-        .contact {
-            padding: 80px 20px;
-            background: var(--light);
-            text-align: center;
-        }
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .form-group input, 
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-logo">M.D Grows</a>
-            <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
+<nav id="navbar">
+  <ul>
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#services" class="nav-link">Services</a></li>
+    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+    <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>1-Page Online Stores in 24 Hours</h1>
-        <p>Get a professional storefront for your small business - no coding needed. Perfect for Instagram sellers, artists, and local businesses.</p>
-        <a href="#contact" class="cta-button">Get Yours Now</a>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <h2>What Our Clients Say</h2>
-        <p>Don't just take our word for it</p>
-        
-        <div class="testimonial-track">
-            <!-- Duplicate testimonials for seamless looping -->
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"Got my cookie business online in 1 day! Sales doubled immediately."</p>
-                <p><strong>- Jamie R.</strong></p>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"Finally look professional without paying Shopify prices. 10/10!"</p>
-                <p><strong>- Marcus T.</strong></p>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★☆</div>
-                <p>"Super fast delivery. Only wish I found this sooner!"</p>
-                <p><strong>- Sarah K.</strong></p>
-            </div>
-            <!-- Duplicates -->
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"Got my cookie business online in 1 day! Sales doubled immediately."</p>
-                <p><strong>- Jamie R.</strong></p>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"Finally look professional without paying Shopify prices. 10/10!"</p>
-                <p><strong>- Marcus T.</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
-        <h2>Simple Pricing</h2>
-        <p>Choose what works for you</p>
-        
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Basic Store</h3>
-                <h4>$99 <span>one-time</span></h4>
-                <ul>
-                    <li>1-page mobile-friendly store</li>
-                    <li>PayPal/Stripe integration</li>
-                    <li>3 product slots</li>
-                    <li>24-hour delivery</li>
-                </ul>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
-            <div class="pricing-card" style="border: 2px solid var(--accent);">
-                <h3>Premium Store</h3>
-                <h4>$199 <span>one-time</span></h4>
-                <ul>
-                    <li>Everything in Basic</li>
-                    <li>5 product slots</li>
-                    <li>Instagram link setup</li>
-                    <li>Basic SEO</li>
-                </ul>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Store + Social</h3>
-                <h4>$299 <span>one-time</span></h4>
-                <ul>
-                    <li>Everything in Premium</li>
-                    <li>3 social media designs</li>
-                    <li>Hashtag strategy</li>
-                </ul>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <h2>Get Your Store Today</h2>
-        <p>Fill out this form and we'll get started immediately</p>
-        
-        <div class="contact-form">
-            <form action="mailto:m.d_grows@yahoo.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="service">Package</label>
-                    <select id="service" name="service">
-                        <option value="Basic Store - $99">Basic Store ($99)</option>
-                        <option value="Premium Store - $199">Premium Store ($199)</option>
-                        <option value="Store + Social - $299">Store + Social ($299)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Tell us about your business</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                <button type="submit" class="cta-button">Send Request</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2023 M.D Grows | All Rights Reserved</p>
-        <div class="social-links">
-            <a href="https://instagram.com/m.d_grows" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:m.d_grows@yahoo.com"><i class="fas fa-envelope"></i></a>
-        </div>
-    </footer>
-</body>
-</html>
+<style>
+  #navbar {
+    position: sticky;
+    top: 0;
+    background: #000;
+    padding: 12px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  #navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+  }
+  #navbar li {
+  }
+  #navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  #navbar a:hover,
+  #navbar a.active {
+    color: #007AFF;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
